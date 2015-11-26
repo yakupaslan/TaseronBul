@@ -1,0 +1,27 @@
+﻿@model TaseronBul.Models.Ilan
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+
+    <div class="row">47
+
+        <div class="col-md-6" >
+
+            <form method="post" action="@Url.Action("Create","Ilan")">
+                <br />  
+                @Html.TextBoxFor(m => m.KategoriId, new  {@class="form-control",placeholder="Kategori Id" }) <br/>               @Html.TextBoxFor(m => m.UyeId, new  {@class="form-control",placeholder="Uye Id" }) <br/> 
+                @Html.TextBoxFor(m => m.IlanTuru, new  {@class="form-control",placeholder="İlan Turu" })<br/>
+                @Html.TextBoxFor(m => m.IlanYayinlamaTarihi, new  {@class="form-control",placeholder="Yayınlama Tarihi" ,type="DateTime"}) <br/>
+                @Html.TextBoxFor(m => m.IlanKapanisTarihi, new  {@class="form-control",placeholder="Kapanış Tarihi" ,type="DateTime"})<br/>
+                @Html.TextBoxFor(m => m.SonIsGunu, new  {@class="form-control",placeholder="Sın Gün",type="DateTime" })<br/>
+                @Html.TextBoxFor(m => m.MaxFiyat, new  {@class="form-control",placeholder="Max Fiyat" })<br/>
+                @Html.TextBoxFor(m => m.Aciklama, new  {@class="form-control",placeholder="Açıklama" })<br/>
+
+                <button type="submit" class="btn btn-success">Kaydet</button><br /> <br />  <br />  
+            </form>
+        </div>
+
+    </div>
+</div>
