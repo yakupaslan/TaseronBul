@@ -11,7 +11,7 @@ namespace TaseronBul.Controllers
     {
         //
         // GET: /Ilan/
-        TaseronBulEntities db = new TaseronBulEntities();
+        TaseronBulEntities1 db = new TaseronBulEntities1();
 
         public ActionResult Index()
         {

@@ -1,0 +1,93 @@
+﻿@model TaseronBul.Models.ModelKayit
+@{
+    ViewBag.Title = "Giris";
+}
+<br />
+<div class="row">
+    <div class="col-md-4" style="border-style: groove; margin-left: 60px;">
+
+
+        <form class="form-group" method="post" action="@Url.Action("Create", "Kayit")">
+            <h3 style="color: #5B69BD">Firma-Kurumsal </h3>       
+            <br />
+            @Html.TextBoxFor(model => model.firma.FirmaAdi, new  {@class="form-control", @placeholder="Firma Adı" })
+            <br />  
+           @Html.TextBoxFor(model => model.firma.YetkiliAd, new { @class = "form-control", @placeholder = "Yetkili Ad "})
+
+            <br />
+           @Html.TextBoxFor(model => model.firma.YetkiliSoyad, new { @class = "form-control", @placeholder = "Yetkili Soyad"})
+
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Telefon, new { @class = "form-control", @placeholder = "Telefon "})
+
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Fax, new { @class = "form-control", @placeholder = "Fax "})
+
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Sehir, new { @class = "form-control", @placeholder = "Sehir "})
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Adres, new { @class = "form-control", @placeholder = "Adres "})
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Mail, new { @class = "form-control", @placeholder = "Mail "})
+
+            <br />
+            @Html.TextBoxFor(model => model.firma.Sifre, new { @class = "form-control", @placeholder = "Sifre "})
+
+            <br />
+
+            <button class="btn btn-success">KAYDOL</button>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="border-style: groove; margin-left: 100px; float:right; margin-right:130px;">
+        <h3 style="color: #5B69BD">Bireysel </h3>
+       
+         <form id="UyeKayit" class="form-group" method="post" action="@Url.Action("Create2", "Kayit")">
+            <br />
+                @Html.ValidationSummary()
+              @Html.TextBoxFor(model => model.uye.Ad, new { @class = "form-control", @placeholder = "Ad "})
+              @Html.ValidationMessageFor(model=>model.uye.Ad)
+            <br />
+
+             @Html.TextBoxFor(model => model.uye.Soyad, new { @class = "form-control", @placeholder = "Soyad "})
+
+            <br />
+             @Html.TextBoxFor(model => model.uye.Telefon, new { @class = "form-control", @placeholder = "Telefon "})
+            <br />
+             @Html.TextBoxFor(model => model.uye.Sehir, new { @class = "form-control", @placeholder = "Sehir "})
+
+
+            <br />
+             @Html.TextBoxFor(model => model.uye.Mail, new { @class = "form-control", @placeholder = "Mail "})
+
+            <br />
+          
+             @Html.TextBoxFor(model => model.uye.Sifre, new { @class = "form-control", @placeholder = "Sifre "})
+            <br />  
+        
+              
+            <input type="button" class="btn btn-success" value="KAYDOL">
+            
+            
+            
+            @Scripts.Render("~/bundles/jqueryval")
+        </form>
+        
+        
+        
+        
+        
+        @section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+    }
+
+    </div>
+          
+</div>
+

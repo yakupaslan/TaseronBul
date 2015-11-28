@@ -1,6 +1,6 @@
 ﻿@model List<TaseronBul.Models.Ilan>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Taseron Bul";
 }
 
 <div class="container">
@@ -21,7 +21,7 @@
 
             <div class="jumbotron">
   <h2>Teklif </h2>
-  <p>İşleriniz için ilan açıp, teklif alabiliriniz.</p>
+  <p>İlanlara teklif yapıp, yeni işler alabilirsiniz.</p>
   <p><a class="btn btn-primary btn-xs" href="#" role="button">Teklif Ver </a></p>
 </div>
         </div>
@@ -60,7 +60,7 @@
            @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
          </td>
            
-           <td><p><a class="btn btn-danger btn xs"  href="Teklif/Deneme?GelenId=@Model[i].IlanNo">Teklif Ver</a></p>
+           <td><p><a class="btn btn-danger btn xs" >Teklif Ver</a></p>
        </tr>
        }
 

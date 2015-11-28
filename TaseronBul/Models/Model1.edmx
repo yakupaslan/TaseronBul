@@ -64,6 +64,7 @@
             <PropertyRef Name="FirmaId" />
           </Key>
           <Property Name="FirmaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirmaAdi" Type="nvarchar" MaxLength="40" />
           <Property Name="YetkiliAd" Type="nvarchar" MaxLength="20" />
           <Property Name="YetkiliSoyad" Type="nvarchar" MaxLength="20" />
           <Property Name="Mail" Type="nvarchar" MaxLength="40" />
@@ -254,7 +255,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TaseronBulModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="TaseronBulEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="TaseronBulEntities1" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Bildirims" EntityType="TaseronBulModel.Bildirim" />
           <EntitySet Name="Firmas" EntityType="TaseronBulModel.Firma" />
           <EntitySet Name="FirmaTeklifs" EntityType="TaseronBulModel.FirmaTeklif" />
@@ -314,6 +315,7 @@
             <PropertyRef Name="FirmaId" />
           </Key>
           <Property Name="FirmaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirmaAdi" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
           <Property Name="YetkiliAd" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="YetkiliSoyad" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="Mail" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
@@ -511,7 +513,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TaseronBulModelStoreContainer" CdmEntityContainer="TaseronBulEntities">
+        <EntityContainerMapping StorageEntityContainer="TaseronBulModelStoreContainer" CdmEntityContainer="TaseronBulEntities1">
           <EntitySetMapping Name="Bildirims">
             <EntityTypeMapping TypeName="TaseronBulModel.Bildirim">
               <MappingFragment StoreEntitySet="Bildirim">
@@ -528,6 +530,7 @@
             <EntityTypeMapping TypeName="TaseronBulModel.Firma">
               <MappingFragment StoreEntitySet="Firma">
                 <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
+                <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
                 <ScalarProperty Name="YetkiliAd" ColumnName="YetkiliAd" />
                 <ScalarProperty Name="YetkiliSoyad" ColumnName="YetkiliSoyad" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />

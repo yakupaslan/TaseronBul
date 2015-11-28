@@ -1,0 +1,97 @@
+﻿@model TaseronBul.Models.Firma
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Firma</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirmaAdi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirmaAdi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YetkiliAd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YetkiliAd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YetkiliSoyad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YetkiliSoyad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sifre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sifre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sehir1.Sehir1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sehir1.Sehir1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Durum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Durum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Puan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Puan)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -20,6 +20,7 @@ namespace TaseronBul.Models
         }
     
         public int FirmaId { get; set; }
+        public string FirmaAdi { get; set; }
         public string YetkiliAd { get; set; }
         public string YetkiliSoyad { get; set; }
         public string Mail { get; set; }

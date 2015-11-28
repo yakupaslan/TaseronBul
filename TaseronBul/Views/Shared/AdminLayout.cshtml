@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color: white;">
+
+<header>
+            <div class="row">
+                <div class="navbar navbar-default navbar-fixed-top" style="margin-top: 25px;">
+                 
+                     <div class="col-lg-3 col-md-6">
+                         <img src="/Images/logo.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="70">
+                     </div>
+                       <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" >
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-comments fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">@ViewBag.YeniUye</div>
+                                        <div>Yeni Firma Üyeliği</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="~/FirmaAdmin/Index">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Detayları Gör</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">@ViewBag.Ilan</div>
+                                        <div>Yeni İlan</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="~/IlanAdmin/Index">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Detayları Gör</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">1</div>
+                                        <div>Ek Özellikler</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Detayları Gör</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
+        </header>
+
+
+    <div id="body">
+        @RenderSection("featured", required: false)
+
+        @RenderBody()
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿@model TaseronBul.Models.Firma
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Firma</legend>
+  <b> <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-1">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirmaAdi) <br />   
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirmaAdi)   <br />  
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YetkiliAd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YetkiliAd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YetkiliSoyad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YetkiliSoyad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sifre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sifre)
+    </div>
+            </div>
+        <div class="col-md-1">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sehir1.Sehir1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sehir1.Sehir1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Durum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Durum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Puan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Puan)
+        </b> 
+        </div>
+        </div>
+    </div>
+</fieldset>
+<p>
+    <div class="col-md-1"></div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FirmaId }) 
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

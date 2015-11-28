@@ -13,10 +13,10 @@ namespace TaseronBul.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TaseronBulEntities : DbContext
+    public partial class TaseronBulEntities1 : DbContext
     {
-        public TaseronBulEntities()
-            : base("name=TaseronBulEntities")
+        public TaseronBulEntities1()
+            : base("name=TaseronBulEntities1")
         {
         }
     

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>@ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -19,7 +19,7 @@
             </div>
             <div id="giris">
                 <div style="float: right; margin-right: 50px; width: 212px; height: 60px; border-style: none;">
-                    <button type="button"  class="btn" style="background-color: wheat; margin: 10px; margin-top: 30px;">Kayıt Ol</button>
+                    <button  onclick="location.href=' @Url.Action("Index","Kayit")'" type="button"  class="btn" style="background-color: wheat; margin: 10px; margin-top: 30px;">Kayıt Ol</button>
 
 
                     <button onclick="location.href=' @Url.Action("Login1","Account")'" id="btn-giris" type="button" class="btn" style="background-color: #c18282; margin: 10px; margin-top: 30px;">Giriş Yap</button>

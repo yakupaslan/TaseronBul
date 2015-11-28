@@ -1,0 +1,109 @@
+﻿@model IEnumerable<TaseronBul.Models.Ilan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<br />  <br />  <br /> 
+ 
+
+        @using (Html.BeginForm("Index","IlanAdmin"))
+ { 
+            @Html.DropDownList("KategoriId")
+            @Html.TextBox("IlkTarih")
+            @Html.TextBox("SonTarih")
+     <input type="submit" value="Listele" />
+     
+      }
+
+<br />   
+ <div class="col-md-12">
+        <div class="panel panel-primary">
+
+  <div class="panel-heading"><h3>Son İlanlar</h3></div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uye.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanTuru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanYayinlamaTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanKapanisTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SonIsGunu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.IlanNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.Uye.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.Kategori.KategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.IlanTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.IlanYayinlamaTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.IlanKapanisTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelmodel => item.SonIsGunu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new {  id=item.IlanNo  }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.IlanNo}) |
+            @Html.ActionLink("Sil", "Delete", new {  id=item.IlanNo })
+        </td>
+    </tr>
+}
+
+</table>
+            </div>
+
+ </div>

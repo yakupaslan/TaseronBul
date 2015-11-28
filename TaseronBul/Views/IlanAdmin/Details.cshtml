@@ -1,0 +1,86 @@
+﻿@model TaseronBul.Models.Ilan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ilan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IlanNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IlanNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Uye.Ad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Uye.Ad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IlanTuru)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IlanTuru)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IlanYayinlamaTarihi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IlanYayinlamaTarihi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IlanKapanisTarihi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IlanKapanisTarihi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SonIsGunu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SonIsGunu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaxFiyat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaxFiyat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Durum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Durum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Aciklama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Aciklama)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

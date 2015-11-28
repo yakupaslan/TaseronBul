@@ -13,14 +13,13 @@ using TaseronBul.Models;
 
 namespace TaseronBul.Controllers
 {
-    [Authorize]
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
         // GET: /Account/Login
 
-        private TaseronBulEntities db = new TaseronBulEntities();
+        private TaseronBulEntities1 db = new TaseronBulEntities1();
         public ActionResult Index()
         {
             return View();
@@ -71,7 +70,7 @@ namespace TaseronBul.Controllers
             }
             else
             {
-                ModelState.AddModelError("", "     Mail veya şifre hatalı!");
+                ModelState.AddModelError("", " Mail veya şifre hatalı!");
             }
             return View(uye);
         }

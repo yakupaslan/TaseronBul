@@ -1,0 +1,100 @@
+﻿@model IEnumerable<TaseronBul.Models.Firma>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />  <br />  
+  <div class="col-md-12">
+        <div class="panel panel-primary">
+
+  <div class="panel-heading"><h3>Yeni Üye Firmalar</h3></div>
+ 
+  <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirmaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YetkiliAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YetkiliSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehir1.Sehir1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirmaAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YetkiliAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YetkiliSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehir1.Sehir1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puan)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.FirmaId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.FirmaId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.FirmaId })
+        </td>
+    </tr>
+}
+
+</table>

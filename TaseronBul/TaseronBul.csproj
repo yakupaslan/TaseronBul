@@ -184,9 +184,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminHomeController.cs" />
+    <Compile Include="Controllers\FirmaAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IlanAdminController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
-    <Compile Include="Controllers\TeklifController.cs" />
+    <Compile Include="Controllers\KayitController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +228,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelKayit.cs" />
     <Compile Include="Models\Sehir.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -234,6 +238,7 @@
     <Compile Include="Models\Uye.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\YeniModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -296,11 +301,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\logo.png" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Images\logo.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -371,9 +376,19 @@
     <Content Include="Views\Account\Login2.cshtml" />
     <Content Include="Views\Ilan\Index.cshtml" />
     <Content Include="Views\Ilan\Create.cshtml" />
-    <Content Include="Views\Teklif\Index.cshtml" />
-    <Content Include="Views\Teklif\Deneme.cshtml" />
-    <Content Include="Views\Shared\Layout2.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Kayit\Index.cshtml" />
+    <Content Include="Views\AdminHome\Index.cshtml" />
+    <Content Include="Views\FirmaAdmin\Index.cshtml" />
+    <Content Include="Views\FirmaAdmin\Details.cshtml" />
+    <Content Include="Views\FirmaAdmin\Create.cshtml" />
+    <Content Include="Views\FirmaAdmin\Edit.cshtml" />
+    <Content Include="Views\FirmaAdmin\Delete.cshtml" />
+    <Content Include="Views\IlanAdmin\Index.cshtml" />
+    <Content Include="Views\IlanAdmin\Details.cshtml" />
+    <Content Include="Views\IlanAdmin\Create.cshtml" />
+    <Content Include="Views\IlanAdmin\Edit.cshtml" />
+    <Content Include="Views\IlanAdmin\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
