@@ -13,7 +13,10 @@
 
     <fieldset>
         <legend>Firma</legend>
-
+        <br />  <br />  
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
         @Html.HiddenFor(model => model.FirmaId)
 
         <div class="editor-label">
@@ -22,7 +25,7 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.FirmaAdi)
             @Html.ValidationMessageFor(model => model.FirmaAdi)
-        </div>
+        </div><br /> 
 
         <div class="editor-label">
             @Html.LabelFor(model => model.YetkiliAd)
@@ -31,7 +34,7 @@
             @Html.EditorFor(model => model.YetkiliAd)
             @Html.ValidationMessageFor(model => model.YetkiliAd)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.YetkiliSoyad)
         </div>
@@ -39,14 +42,14 @@
             @Html.EditorFor(model => model.YetkiliSoyad)
             @Html.ValidationMessageFor(model => model.YetkiliSoyad)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Mail)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Mail)
             @Html.ValidationMessageFor(model => model.Mail)
-        </div>
+        </div><br /> 
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Sifre)
@@ -55,7 +58,9 @@
             @Html.EditorFor(model => model.Sifre)
             @Html.ValidationMessageFor(model => model.Sifre)
         </div>
+        <br /> 
 
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Telefon)
         </div>
@@ -63,7 +68,9 @@
             @Html.EditorFor(model => model.Telefon)
             @Html.ValidationMessageFor(model => model.Telefon)
         </div>
-
+        <br /> 
+        </div>
+    <div class="col-md-3">
         <div class="editor-label">
             @Html.LabelFor(model => model.Sehir, "Sehir1")
         </div>
@@ -71,7 +78,7 @@
             @Html.DropDownList("Sehir", String.Empty)
             @Html.ValidationMessageFor(model => model.Sehir)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Adres)
         </div>
@@ -79,7 +86,7 @@
             @Html.EditorFor(model => model.Adres)
             @Html.ValidationMessageFor(model => model.Adres)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Fax)
         </div>
@@ -87,7 +94,7 @@
             @Html.EditorFor(model => model.Fax)
             @Html.ValidationMessageFor(model => model.Fax)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Durum)
         </div>
@@ -95,24 +102,31 @@
             @Html.EditorFor(model => model.Durum)
             @Html.ValidationMessageFor(model => model.Durum)
         </div>
-
+        <br /> 
         <div class="editor-label">
             @Html.LabelFor(model => model.Puan)
         </div>
+
         <div class="editor-field">
             @Html.EditorFor(model => model.Puan)
             @Html.ValidationMessageFor(model => model.Puan)
         </div>
-
+        <br /> 
         <p>
-            <input type="submit" value="Save" />
+            <input class="btn btn-success" type="submit" value="KAYDET" />
         </p>
+
+
+    </div>
+    </div>
+
     </fieldset>
 }
-
+<div class="col-md-2"></div>
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Geri Dön", "Index")
 </div>
+    
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -9,78 +9,89 @@
 
 <fieldset>
     <legend>Ilan</legend>
+    <br />  <br />  
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IlanNo)
+         @Html.HiddenFor(model => model.IlanNo)
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IlanNo)
-    </div>
+    
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Uye.Ad)
+         @Html.LabelFor(model => model.Uye.Ad)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Uye.Ad)
     </div>
-
+         <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+         @Html.LabelFor(model => model.Kategori.KategoriAdi)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Kategori.KategoriAdi)
     </div>
-
+         <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IlanTuru)
+         @Html.LabelFor(model => model.IlanTuru)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IlanTuru)
     </div>
-
+         <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IlanYayinlamaTarihi)
+         @Html.LabelFor(model => model.IlanYayinlamaTarihi)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IlanYayinlamaTarihi)
     </div>
-
+         <br />  
+        
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IlanKapanisTarihi)
+         @Html.LabelFor(model => model.IlanKapanisTarihi)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IlanKapanisTarihi)
     </div>
 
+         </div>
+        <div class="col-md-1">
+         <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SonIsGunu)
+         @Html.LabelFor(model => model.SonIsGunu)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SonIsGunu)
     </div>
-
+        <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.MaxFiyat)
+         @Html.LabelFor(model => model.MaxFiyat)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.MaxFiyat)
     </div>
-
+             <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Durum)
+         @Html.LabelFor(model => model.Durum)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Durum)
     </div>
-
+             <br />  
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Aciklama)
+         @Html.LabelFor(model => model.Aciklama)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Aciklama)
+    </div> <br />  
+             </div>
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div class="col-md-1"></div>
+    @Html.ActionLink("Geri Dön", "Index")
+    &nbsp  &nbsp &nbsp &nbsp &nbsp
+    @Html.ActionLink("Güncelle", "Edit", new { /* id=Model.PrimaryKey */ }) 
+    
 </p>
