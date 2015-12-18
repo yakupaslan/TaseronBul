@@ -190,6 +190,7 @@
     <Compile Include="Controllers\IlanAdminController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
     <Compile Include="Controllers\KayitController.cs" />
+    <Compile Include="Controllers\ListeIlanController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -389,6 +390,7 @@
     <Content Include="Views\IlanAdmin\Create.cshtml" />
     <Content Include="Views\IlanAdmin\Edit.cshtml" />
     <Content Include="Views\IlanAdmin\Delete.cshtml" />
+    <Content Include="Views\ListeIlan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
