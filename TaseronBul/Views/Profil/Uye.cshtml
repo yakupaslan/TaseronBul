@@ -1,0 +1,52 @@
+﻿@model TaseronBul.Models.Uye
+@{
+    ViewBag.Title = "uye";
+}
+<br />
+<div class="col-md-4">
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href='@Url.Action("Kontrol", "Profil")'>Bilgilerim</a></li>
+        <li><a href='@Url.Action("GuncelIlan", "Profil")'>Güncel İlanlar</a></li>
+       <li><a href='@Url.Action("EskiIlan", "Profil")'>Eski İlanlar</a></li>
+        <li><a href='@Url.Action("KabulIlan", "Profil")'>Teklif Onayla</a></li>
+         <li><a href='@Url.Action("Create", "Ilan")'>İlan Ver</a></li>
+    </ul>
+</div>
+<div class="col-md-8">
+    <div>
+        <label style="color: red">Ad      :</label>
+        <div style="margin-left:5%">
+             @Html.DisplayFor(model => model.Ad)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Soyad      :</label>
+        <div style="margin-left:5%">
+             @Html.DisplayFor(model => model.Soyad)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">E-posta      :</label>
+        <div style="margin-left:5%">
+             @Html.DisplayFor(model => model.Mail)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Telefon      :</label>
+        <div style="margin-left:5%">
+             @Html.DisplayFor(model => model.Telefon)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Şehir      :</label>
+        <div style="margin-left:5%">
+            @Html.Label("", String.Format("{0}", (string)@ViewBag.sehir))
+        </div>
+    </div>
+    <br />  
+    <p><a class="btn btn-primary btn-xs" href="#" role="button" style="float:right">Güncelle </a></p>
+</div>

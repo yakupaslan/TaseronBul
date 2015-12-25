@@ -1,0 +1,117 @@
+﻿@model List<TaseronBul.Models.Ilan>
+@{
+    ViewBag.Title = "GuncelIlan";
+}
+<br />
+<div class="col-md-4">
+    <ul class="nav nav-pills nav-stacked">
+        <li ><a href='@Url.Action("Kontrol", "Profil")'>Bilgilerim</a></li>
+        <li class="active"><a href='@Url.Action("GuncelIlan", "Profil")'>Güncel İlanlar</a></li>
+        <li><a href='@Url.Action("EskiIlan", "Profil")'>Eski İlanlar</a></li>
+        <li><a href='@Url.Action("KabulIlan", "Profil")'>Teklif Onayla</a></li>
+        <li><a href='@Url.Action("Create", "Ilan")'>İlan Ver</a></li>
+    </ul>
+</div>
+<div class="col-md-8">
+    <br />
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Açık İhale İlanlar</div>
+            <table class="table">
+                <tr>
+                    <td><b>Açıklama</b></td>
+                    <td><b>Yayınlama Tarihi</b></td>
+                    <td><b>Son Tarih</b></td>
+                    <td><b>Max Fiyat</b></td>
+                    <td><b>Tür</b></td>
+                    <td><b>İlan</b> </td>
+                </tr>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    string tur;
+                    if (Model[i].IlanTuru==false)
+                    {
+                        tur = "Açık İhale";
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    <tr>
+                        <td>
+                            
+                            @Html.DisplayFor(modelItem => Model[i].Aciklama).ToString().Substring(0,5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi).ToString().Substring(0,10)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi).ToString().Substring(0,10)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => tur)
+                        </td>
+                        <td>
+                            <p>
+                                 <a class="btn btn-danger btn xs" ; href='@Url.Action("IlanKontT", "Ilan", new { id = Model[i].IlanNo })'>İlan Ayrıntı </a>
+                                 <a class="btn btn-danger btn xs" ; href="#">İptal Et</a>
+                            </p>
+                    </tr>
+                }
+
+            </table>
+        </div>
+     <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Kapalı İhale İlanlar</div>
+            <table class="table">
+                <tr>
+                    <td><b>Açıklama</b></td>
+                    <td><b>Yayınlama Tarihi</b></td>
+                    <td><b>Son Tarih</b></td>
+                    <td><b>Max Fiyat</b></td>
+                    <td><b>Tür</b></td>
+                    <td><b>İlan </b> </td>
+                </tr>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    string tur;
+                    if (Model[i].IlanTuru==false)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        tur = "Kapalı İhale";
+                    }
+                    <tr>
+                        <td>
+                            
+                            @Html.DisplayFor(modelItem => Model[i].Aciklama).ToString().Substring(0,5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi).ToString().Substring(0,10)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi).ToString().Substring(0,10)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => tur)
+                        </td>
+                        <td>
+                            <p>
+                                <a class="btn btn-danger btn xs" ; href='@Url.Action("IlanKontT", "Ilan", new { id = Model[i].IlanNo })'>İlan Ayrıntı </a>
+                                <a class="btn btn-danger btn xs" ; href="#">İptal Et</a>
+                            </p>
+                    </tr>
+                }
+
+            </table>
+        </div>
+</div>

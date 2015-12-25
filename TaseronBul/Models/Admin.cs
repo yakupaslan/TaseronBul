@@ -12,24 +12,11 @@ namespace TaseronBul.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Uye
+    public partial class Admin
     {
-        public Uye()
-        {
-            this.Ilans = new HashSet<Ilan>();
-        }
-    
-        public int UyeId { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string Mail { get; set; }
+        public int Id { get; set; }
+        public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
-        public Nullable<byte> Sehir { get; set; }
-        public string Telefon { get; set; }
-        public Nullable<bool> Durum { get; set; }
         public Nullable<byte> Tip { get; set; }
-    
-        public virtual ICollection<Ilan> Ilans { get; set; }
-        public virtual Sehir Sehir1 { get; set; }
     }
 }

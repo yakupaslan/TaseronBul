@@ -1,27 +1,57 @@
-﻿@model TaseronBul.Models.Ilan
+﻿@model List<TaseronBul.Models.Ilan>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "İlanlar";
 }
+<br />
+<br />
+<div class="col-md-10" style="margin-left:5%">
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Son İlanlar</div>
+            <table class="table">
+                <tr>
+                    <td><b>Açıklama</b></td>
+                    <td><b>Yayınlama Tarihi</b></td>
+                    <td><b>Son Tarih</b></td>
+                    <td><b>Max Fiyat</b></td>
+                    <td><b>Tür</b></td>
+                    <td><b>İlan Ayrıntısı</b> </td>
+                </tr>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    string tur;
+                    if (Model[i].IlanTuru==false)
+                    {
+                        tur = "Açık İhale";
+                    }
+                    else
+                    {
+                        tur = "Kapalı İhale";
+                    }
+                    <tr>
+                        <td>
+                            
+                            @Html.DisplayFor(modelItem => Model[i].Aciklama)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => tur)
+                        </td>
+                        <td>
+                            <p>
+                                <a class="btn btn-danger btn xs" ; href='@Url.Action("IlanKontT", "Ilan", new { id = Model[i].IlanNo })'>Teklif Ver</a>
+                            </p>
+                    </tr>
+                }
 
-<div class="container">
-
-    <div class="row">47
-
-        <div class="col-md-6" >
-
-            <form method="post" action="@Url.Action("Create","Ilan")">
-                <br />  
-                @Html.TextBoxFor(m => m.KategoriId, new  {@class="form-control",placeholder="Kategori Id" }) <br/>               @Html.TextBoxFor(m => m.UyeId, new  {@class="form-control",placeholder="Uye Id" }) <br/> 
-                @Html.TextBoxFor(m => m.IlanTuru, new  {@class="form-control",placeholder="İlan Turu" })<br/>
-                @Html.TextBoxFor(m => m.IlanYayinlamaTarihi, new  {@class="form-control",placeholder="Yayınlama Tarihi" ,type="DateTime"}) <br/>
-                @Html.TextBoxFor(m => m.IlanKapanisTarihi, new  {@class="form-control",placeholder="Kapanış Tarihi" ,type="DateTime"})<br/>
-                @Html.TextBoxFor(m => m.SonIsGunu, new  {@class="form-control",placeholder="Sın Gün",type="DateTime" })<br/>
-                @Html.TextBoxFor(m => m.MaxFiyat, new  {@class="form-control",placeholder="Max Fiyat" })<br/>
-                @Html.TextBoxFor(m => m.Aciklama, new  {@class="form-control",placeholder="Açıklama" })<br/>
-
-                <button type="submit" class="btn btn-success">Kaydet</button><br /> <br />  <br />  
-            </form>
+            </table>
         </div>
-
     </div>
-</div>

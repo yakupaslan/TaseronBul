@@ -4,58 +4,68 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TaseronBulModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="TaseronBulModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
         <EntityContainer Name="TaseronBulModelStoreContainer">
-          <EntitySet Name="Bildirim" EntityType="TaseronBulModel.Store.Bildirim" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Firma" EntityType="TaseronBulModel.Store.Firma" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FirmaTeklif" EntityType="TaseronBulModel.Store.FirmaTeklif" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Ilan" EntityType="TaseronBulModel.Store.Ilan" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="KabulEdilen" EntityType="TaseronBulModel.Store.KabulEdilen" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Kategori" EntityType="TaseronBulModel.Store.Kategori" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Sehir" EntityType="TaseronBulModel.Store.Sehir" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="TaseronBulModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Uye" EntityType="TaseronBulModel.Store.Uye" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Admin" EntityType="TaseronBulModel.Store.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bildirim" EntityType="TaseronBulModel.Store.Bildirim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Firma" EntityType="TaseronBulModel.Store.Firma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirmaTeklif" EntityType="TaseronBulModel.Store.FirmaTeklif" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilan" EntityType="TaseronBulModel.Store.Ilan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KabulEdilen" EntityType="TaseronBulModel.Store.KabulEdilen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategori" EntityType="TaseronBulModel.Store.Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sehir" EntityType="TaseronBulModel.Store.Sehir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="TaseronBulModel.Store.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uye" EntityType="TaseronBulModel.Store.Uye" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Bildirim_KabulEdilen" Association="TaseronBulModel.Store.FK_Bildirim_KabulEdilen">
-            <End Role="KabulEdilen" EntitySet="KabulEdilen" />
-            <End Role="Bildirim" EntitySet="Bildirim" />
+            <End EntitySet="KabulEdilen" Role="KabulEdilen" />
+            <End EntitySet="Bildirim" Role="Bildirim" />
           </AssociationSet>
           <AssociationSet Name="FK_BireyselUye_Sehir" Association="TaseronBulModel.Store.FK_BireyselUye_Sehir">
-            <End Role="Sehir" EntitySet="Sehir" />
-            <End Role="Uye" EntitySet="Uye" />
+            <End EntitySet="Sehir" Role="Sehir" />
+            <End EntitySet="Uye" Role="Uye" />
           </AssociationSet>
           <AssociationSet Name="FK_Firma_Sehir" Association="TaseronBulModel.Store.FK_Firma_Sehir">
-            <End Role="Sehir" EntitySet="Sehir" />
-            <End Role="Firma" EntitySet="Firma" />
+            <End EntitySet="Sehir" Role="Sehir" />
+            <End EntitySet="Firma" Role="Firma" />
           </AssociationSet>
           <AssociationSet Name="FK_FirmaTeklif_Firma" Association="TaseronBulModel.Store.FK_FirmaTeklif_Firma">
-            <End Role="Firma" EntitySet="Firma" />
-            <End Role="FirmaTeklif" EntitySet="FirmaTeklif" />
+            <End EntitySet="Firma" Role="Firma" />
+            <End EntitySet="FirmaTeklif" Role="FirmaTeklif" />
           </AssociationSet>
           <AssociationSet Name="FK_FirmaTeklif_Ilan" Association="TaseronBulModel.Store.FK_FirmaTeklif_Ilan">
-            <End Role="Ilan" EntitySet="Ilan" />
-            <End Role="FirmaTeklif" EntitySet="FirmaTeklif" />
+            <End EntitySet="Ilan" Role="Ilan" />
+            <End EntitySet="FirmaTeklif" Role="FirmaTeklif" />
           </AssociationSet>
           <AssociationSet Name="FK_Ilan_BireyselUye" Association="TaseronBulModel.Store.FK_Ilan_BireyselUye">
-            <End Role="Uye" EntitySet="Uye" />
-            <End Role="Ilan" EntitySet="Ilan" />
+            <End EntitySet="Uye" Role="Uye" />
+            <End EntitySet="Ilan" Role="Ilan" />
           </AssociationSet>
           <AssociationSet Name="FK_Ilan_Kategori" Association="TaseronBulModel.Store.FK_Ilan_Kategori">
-            <End Role="Kategori" EntitySet="Kategori" />
-            <End Role="Ilan" EntitySet="Ilan" />
+            <End EntitySet="Kategori" Role="Kategori" />
+            <End EntitySet="Ilan" Role="Ilan" />
           </AssociationSet>
           <AssociationSet Name="FK_KabulEdilen_FirmaTeklif" Association="TaseronBulModel.Store.FK_KabulEdilen_FirmaTeklif">
-            <End Role="FirmaTeklif" EntitySet="FirmaTeklif" />
-            <End Role="KabulEdilen" EntitySet="KabulEdilen" />
+            <End EntitySet="FirmaTeklif" Role="FirmaTeklif" />
+            <End EntitySet="KabulEdilen" Role="KabulEdilen" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="KullaniciAdi" MaxLength="30" Type="nvarchar" />
+          <Property Name="Sifre" MaxLength="20" Type="nvarchar" />
+          <Property Name="Tip" Type="tinyint" />
+        </EntityType>
         <EntityType Name="Bildirim">
           <Key>
             <PropertyRef Name="BildirimId" />
           </Key>
-          <Property Name="BildirimId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BildirimId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="KabulId" Type="int" />
-          <Property Name="FirmaAciklama" Type="nvarchar" MaxLength="250" />
-          <Property Name="UyeAciklama" Type="nvarchar" MaxLength="250" />
+          <Property Name="FirmaAciklama" MaxLength="250" Type="nvarchar" />
+          <Property Name="UyeAciklama" MaxLength="250" Type="nvarchar" />
           <Property Name="FDurum" Type="bit" />
           <Property Name="BDurum" Type="bit" />
         </EntityType>
@@ -63,24 +73,25 @@
           <Key>
             <PropertyRef Name="FirmaId" />
           </Key>
-          <Property Name="FirmaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FirmaAdi" Type="nvarchar" MaxLength="40" />
-          <Property Name="YetkiliAd" Type="nvarchar" MaxLength="20" />
-          <Property Name="YetkiliSoyad" Type="nvarchar" MaxLength="20" />
-          <Property Name="Mail" Type="nvarchar" MaxLength="40" />
-          <Property Name="Sifre" Type="nvarchar" MaxLength="40" />
-          <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+          <Property Name="FirmaId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FirmaAdi" MaxLength="20" Type="nvarchar" />
+          <Property Name="YetkiliAd" MaxLength="20" Type="nvarchar" />
+          <Property Name="YetkiliSoyad" MaxLength="20" Type="nvarchar" />
+          <Property Name="Mail" MaxLength="40" Type="nvarchar" />
+          <Property Name="Sifre" MaxLength="40" Type="nvarchar" />
+          <Property Name="Telefon" MaxLength="20" Type="nvarchar" />
           <Property Name="Sehir" Type="tinyint" />
           <Property Name="Adres" Type="nvarchar(max)" />
-          <Property Name="Fax" Type="nvarchar" MaxLength="40" />
+          <Property Name="Fax" MaxLength="40" Type="nvarchar" />
           <Property Name="Durum" Type="bit" />
           <Property Name="Puan" Type="tinyint" />
+          <Property Name="Tip" Type="tinyint" />
         </EntityType>
         <EntityType Name="FirmaTeklif">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="IlanNo" Type="int" />
           <Property Name="FirmaId" Type="int" />
           <Property Name="Tarih" Type="datetime" />
@@ -90,7 +101,7 @@
           <Key>
             <PropertyRef Name="IlanNo" />
           </Key>
-          <Property Name="IlanNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IlanNo" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="UyeId" Type="int" />
           <Property Name="KategoriId" Type="tinyint" />
           <Property Name="IlanTuru" Type="bit" />
@@ -105,7 +116,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="TeklifId" Type="int" />
           <Property Name="Tarih" Type="datetime" />
         </EntityType>
@@ -113,23 +124,23 @@
           <Key>
             <PropertyRef Name="KategoriId" />
           </Key>
-          <Property Name="KategoriId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="KategoriAdi" Type="nvarchar" MaxLength="40" />
+          <Property Name="KategoriId" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="KategoriAdi" MaxLength="40" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Sehir">
           <Key>
             <PropertyRef Name="Plaka" />
           </Key>
-          <Property Name="Plaka" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Sehir" Type="nvarchar" MaxLength="40" />
+          <Property Name="Plaka" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="Sehir" MaxLength="40" Type="nvarchar" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="principal_id" Nullable="false" Type="int" />
+          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -137,18 +148,19 @@
           <Key>
             <PropertyRef Name="UyeId" />
           </Key>
-          <Property Name="UyeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Ad" Type="nvarchar" MaxLength="20" />
-          <Property Name="Soyad" Type="nvarchar" MaxLength="20" />
-          <Property Name="Mail" Type="nvarchar" MaxLength="40" />
-          <Property Name="Sifre" Type="nvarchar" MaxLength="40" />
+          <Property Name="UyeId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Ad" MaxLength="20" Type="nvarchar" />
+          <Property Name="Soyad" MaxLength="20" Type="nvarchar" />
+          <Property Name="Mail" MaxLength="40" Type="nvarchar" />
+          <Property Name="Sifre" MaxLength="40" Type="nvarchar" />
           <Property Name="Sehir" Type="tinyint" />
-          <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+          <Property Name="Telefon" MaxLength="20" Type="nvarchar" />
           <Property Name="Durum" Type="bit" />
+          <Property Name="Tip" Type="tinyint" />
         </EntityType>
         <Association Name="FK_Bildirim_KabulEdilen">
-          <End Role="KabulEdilen" Type="TaseronBulModel.Store.KabulEdilen" Multiplicity="0..1" />
-          <End Role="Bildirim" Type="TaseronBulModel.Store.Bildirim" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.KabulEdilen" Multiplicity="0..1" Role="KabulEdilen" />
+          <End Type="TaseronBulModel.Store.Bildirim" Multiplicity="*" Role="Bildirim" />
           <ReferentialConstraint>
             <Principal Role="KabulEdilen">
               <PropertyRef Name="Id" />
@@ -159,8 +171,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BireyselUye_Sehir">
-          <End Role="Sehir" Type="TaseronBulModel.Store.Sehir" Multiplicity="0..1" />
-          <End Role="Uye" Type="TaseronBulModel.Store.Uye" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Sehir" Multiplicity="0..1" Role="Sehir" />
+          <End Type="TaseronBulModel.Store.Uye" Multiplicity="*" Role="Uye" />
           <ReferentialConstraint>
             <Principal Role="Sehir">
               <PropertyRef Name="Plaka" />
@@ -171,8 +183,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Firma_Sehir">
-          <End Role="Sehir" Type="TaseronBulModel.Store.Sehir" Multiplicity="0..1" />
-          <End Role="Firma" Type="TaseronBulModel.Store.Firma" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Sehir" Multiplicity="0..1" Role="Sehir" />
+          <End Type="TaseronBulModel.Store.Firma" Multiplicity="*" Role="Firma" />
           <ReferentialConstraint>
             <Principal Role="Sehir">
               <PropertyRef Name="Plaka" />
@@ -183,8 +195,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FirmaTeklif_Firma">
-          <End Role="Firma" Type="TaseronBulModel.Store.Firma" Multiplicity="0..1" />
-          <End Role="FirmaTeklif" Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Firma" Multiplicity="0..1" Role="Firma" />
+          <End Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="*" Role="FirmaTeklif" />
           <ReferentialConstraint>
             <Principal Role="Firma">
               <PropertyRef Name="FirmaId" />
@@ -195,8 +207,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FirmaTeklif_Ilan">
-          <End Role="Ilan" Type="TaseronBulModel.Store.Ilan" Multiplicity="0..1" />
-          <End Role="FirmaTeklif" Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Ilan" Multiplicity="0..1" Role="Ilan" />
+          <End Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="*" Role="FirmaTeklif" />
           <ReferentialConstraint>
             <Principal Role="Ilan">
               <PropertyRef Name="IlanNo" />
@@ -207,8 +219,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ilan_BireyselUye">
-          <End Role="Uye" Type="TaseronBulModel.Store.Uye" Multiplicity="0..1" />
-          <End Role="Ilan" Type="TaseronBulModel.Store.Ilan" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Uye" Multiplicity="0..1" Role="Uye" />
+          <End Type="TaseronBulModel.Store.Ilan" Multiplicity="*" Role="Ilan" />
           <ReferentialConstraint>
             <Principal Role="Uye">
               <PropertyRef Name="UyeId" />
@@ -219,8 +231,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ilan_Kategori">
-          <End Role="Kategori" Type="TaseronBulModel.Store.Kategori" Multiplicity="0..1" />
-          <End Role="Ilan" Type="TaseronBulModel.Store.Ilan" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.Kategori" Multiplicity="0..1" Role="Kategori" />
+          <End Type="TaseronBulModel.Store.Ilan" Multiplicity="*" Role="Ilan" />
           <ReferentialConstraint>
             <Principal Role="Kategori">
               <PropertyRef Name="KategoriId" />
@@ -231,8 +243,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_KabulEdilen_FirmaTeklif">
-          <End Role="FirmaTeklif" Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="0..1" />
-          <End Role="KabulEdilen" Type="TaseronBulModel.Store.KabulEdilen" Multiplicity="*" />
+          <End Type="TaseronBulModel.Store.FirmaTeklif" Multiplicity="0..1" Role="FirmaTeklif" />
+          <End Type="TaseronBulModel.Store.KabulEdilen" Multiplicity="*" Role="KabulEdilen" />
           <ReferentialConstraint>
             <Principal Role="FirmaTeklif">
               <PropertyRef Name="Id" />
@@ -242,16 +254,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'TaseronBul.dbo.Admin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Admin">
-        <Property Name="Id" Type="int" />
-        <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="30" />
-        <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
-      </EntityType>-->
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TaseronBulModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -297,6 +300,7 @@
             <End Role="Sehir" EntitySet="Sehirs" />
             <End Role="Uye" EntitySet="Uyes" />
           </AssociationSet>
+          <EntitySet Name="Admin" EntityType="TaseronBulModel.Admin" />
         </EntityContainer>
         <EntityType Name="Bildirim">
           <Key>
@@ -315,7 +319,7 @@
             <PropertyRef Name="FirmaId" />
           </Key>
           <Property Name="FirmaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="FirmaAdi" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="FirmaAdi" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="YetkiliAd" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="YetkiliSoyad" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="Mail" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
@@ -328,6 +332,7 @@
           <Property Name="Puan" Type="Byte" />
           <NavigationProperty Name="Sehir1" Relationship="TaseronBulModel.FK_Firma_Sehir" FromRole="Firma" ToRole="Sehir" />
           <NavigationProperty Name="FirmaTeklifs" Relationship="TaseronBulModel.FK_FirmaTeklif_Firma" FromRole="Firma" ToRole="FirmaTeklif" />
+          <Property Type="Byte" Name="Tip" />
         </EntityType>
         <EntityType Name="FirmaTeklif">
           <Key>
@@ -411,6 +416,7 @@
           <Property Name="Durum" Type="Boolean" />
           <NavigationProperty Name="Ilans" Relationship="TaseronBulModel.FK_Ilan_BireyselUye" FromRole="Uye" ToRole="Ilan" />
           <NavigationProperty Name="Sehir1" Relationship="TaseronBulModel.FK_BireyselUye_Sehir" FromRole="Uye" ToRole="Sehir" />
+          <Property Type="Byte" Name="Tip" />
         </EntityType>
         <Association Name="FK_Bildirim_KabulEdilen">
           <End Role="KabulEdilen" Type="TaseronBulModel.KabulEdilen" Multiplicity="0..1" />
@@ -508,6 +514,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="KullaniciAdi" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sifre" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="Tip" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -529,6 +544,7 @@
           <EntitySetMapping Name="Firmas">
             <EntityTypeMapping TypeName="TaseronBulModel.Firma">
               <MappingFragment StoreEntitySet="Firma">
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
                 <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
                 <ScalarProperty Name="YetkiliAd" ColumnName="YetkiliAd" />
@@ -610,6 +626,7 @@
           <EntitySetMapping Name="Uyes">
             <EntityTypeMapping TypeName="TaseronBulModel.Uye">
               <MappingFragment StoreEntitySet="Uye">
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="UyeId" ColumnName="UyeId" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />
@@ -618,6 +635,16 @@
                 <ScalarProperty Name="Sehir" ColumnName="Sehir" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="TaseronBulModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

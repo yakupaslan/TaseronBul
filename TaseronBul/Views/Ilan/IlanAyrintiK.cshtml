@@ -1,0 +1,110 @@
+﻿@model List<TaseronBul.Models.Teklif>
+@{
+    ViewBag.Title = "IlanAyrinti";
+}
+<h2>IlanAyrintiK</h2>
+<br />
+<div class="container">
+    <div class="col">
+        <div class="col-md-6">
+            <div style="float: left; margin-left: 30px; width: auto; height: auto; background-color: beige;">
+                <img src="/Images/indir.jpg" class="img-thumbnail" alt="Cinque Terre" width="600" height="250">
+            </div>
+
+            <div style="float: left; margin-left: 30px; width: 500px; height: auto; margin-top: 30px">
+
+
+
+
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Teklifler</div>
+                    <table class="table">
+                        <tr>
+                            <td><b>Firma</b></td>
+                            <td><b>Tarih</b></td>
+                        </tr>
+                        @for (int i = 0; i < Model.Count; i++)
+                        { 
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model[i].FirmaAdi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model[i].Tarih)
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col">
+        <div style="float: left; margin-left: 30px; width: 500px; height: auto; background-color: white;">
+
+            <div class="form-control">
+                <label style="color: red">Kategori      :</label>
+                @Html.Label((string)@ViewBag.Kategori)
+            </div>
+            <div class="form-control">
+                <label style="color: red">İlan Yayın Tarihi      :</label>
+                @Html.Label("", String.Format("{0}", (string)@ViewBag.IlanY))
+            </div>
+            <div class="form-control">
+                <label style="color: red">İlan Kapanış Tarihi      :</label>
+                @Html.Label("", String.Format("{0}", (string)@ViewBag.IlanK))
+            </div>
+            <div class="form-control">
+                <label style="color: red">Son İs Tarihi      :</label>
+                @Html.Label("", String.Format("{0}", (string)@ViewBag.Sonis))
+            </div>
+            <div class="form-control">
+                <label style="color: red">İlan Türü      :</label>
+                @Html.Label((string)@ViewBag.Ilantürü)
+            </div>
+            <div class="form-control">
+                <label style="color: red">Maximum Fiyat      :</label>
+                @Html.Label((string)@ViewBag.MaxF)
+            </div>
+            <br />
+            <div>
+                <label style="color: red; float:left">Açıklama      :</label>
+                <div style="float:left;margin-left:30px; width: 100px; height: 210px; background-color: white;">
+                    @Html.TextArea("name", (string)ViewBag.Aciklama, new { @cols = "55", @rows = "10", @readonly = true,@resize="none"})
+                    </div>
+                
+            </div>
+            <br />
+        </div>
+        <div style="margin-right: 100px; float: right; width: auto; height: auto;">
+            <div>
+                @using (Html.BeginForm("IlanAyrintiK", "Ilan"))
+                {
+                    <b>Teklif(TL):</b>
+                            
+                    @Html.TextBox("fiyat")
+                    @Html.Hidden("id", string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority, Url.Content("?")))
+
+                   
+                    <input class="btn btn-success" type="submit" name="teklifver" />        
+                }
+                @foreach (ModelState modelState in ViewData.ModelState.Values)
+                {
+                    foreach (ModelError error in modelState.Errors)
+                    {
+                    @error.ErrorMessage.ToString()<br />
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>

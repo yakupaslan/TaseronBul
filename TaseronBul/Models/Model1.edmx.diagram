@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cb45a139e3f24b53a3cb5e316e1bbbfa" Name="Diagram1">
+      <Diagram DiagramId="cb45a139e3f24b53a3cb5e316e1bbbfa" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="TaseronBulModel.Bildirim" Width="1.5" PointX="9.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.Firma" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.FirmaTeklif" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TaseronBulModel.Ilan" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaseronBulModel.Ilan" Width="1.5" PointX="5.375" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.KabulEdilen" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.Kategori" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.Sehir" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TaseronBulModel.sysdiagram" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaseronBulModel.sysdiagram" Width="1.5" PointX="8" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.Uye" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
         <AssociationConnector Association="TaseronBulModel.FK_Bildirim_KabulEdilen" ManuallyRouted="false" />
         <AssociationConnector Association="TaseronBulModel.FK_Firma_Sehir" ManuallyRouted="false" />
@@ -22,6 +22,7 @@
         <AssociationConnector Association="TaseronBulModel.FK_Ilan_BireyselUye" ManuallyRouted="false" />
         <AssociationConnector Association="TaseronBulModel.FK_Ilan_Kategori" ManuallyRouted="false" />
         <AssociationConnector Association="TaseronBulModel.FK_BireyselUye_Sehir" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TaseronBulModel.Admin" Width="1.5" PointX="8" PointY="7.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

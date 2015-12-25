@@ -34,5 +34,6 @@ namespace TaseronBul.Models
         public DbSet<Sehir> Sehirs { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Uye> Uyes { get; set; }
+        public DbSet<Admin> Admin { get; set; }
     }
 }

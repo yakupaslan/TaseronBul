@@ -31,6 +31,7 @@ namespace TaseronBul.Models
         public string Fax { get; set; }
         public Nullable<bool> Durum { get; set; }
         public Nullable<byte> Puan { get; set; }
+        public Nullable<byte> Tip { get; set; }
     
         public virtual Sehir Sehir1 { get; set; }
         public virtual ICollection<FirmaTeklif> FirmaTeklifs { get; set; }

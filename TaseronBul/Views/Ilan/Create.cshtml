@@ -1,14 +1,32 @@
-﻿@model TaseronBul.Models.Kategori
+﻿@model TaseronBul.Models.Ilan
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "İlan";
 }
+<h2>İlan Create</h2>
+<div  style="margin-left:30%">
 
-<h2>Create</h2>
     
-<div class="form-group">
-    @Html.Label("Kategori :")
-    @Html.DropDownList("KategoriId")
-    <br />  <br />  
-   
+        <form class="form-group" method="post" action="@Url.Action("Create", "Ilan")">
+            <br />
 
+            @Html.DropDownList("KategoriId", (IEnumerable<SelectListItem>)ViewBag.KategoriId, "Kategori Seçiniz", new { @class = "form-control" })
+            <br />
+            @Html.DropDownList("Tip", (IEnumerable<SelectListItem>)ViewBag.Tip, "İhale Tipi ", new { @class = "form-control" })
+
+            <br />
+            @Html.TextBoxFor(m => m.IlanYayinlamaTarihi, new { @class = "form-control", placeholder = "İlan Yayınlama Tarihi" })<br />
+            <br />
+            @Html.TextBoxFor(m => m.IlanKapanisTarihi, new { @class = "form-control", placeholder = "İlan Kapanış Tarihi" })<br />
+            <br />
+            @Html.TextBoxFor(m => m.SonIsGunu, new { @class = "form-control", placeholder = "İlan Son İs günü" })<br />
+            <br />
+            @Html.TextBoxFor(m => m.MaxFiyat, new { @class = "form-control", placeholder = "İlan Max Fiyat" })<br />
+            <br />
+            @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control", @placeholder = "İlan Turu", @cols = "55", @rows = "10", })<br />
+
+            <button type="submit" class="btn btn-success">Kaydet</button><br />
+            <br />
+            <br />
+        </form>
+   
 </div>

@@ -12,7 +12,7 @@
         <h3 style="color: #5B69BD">Kurumsal </h3>
         <br />
         <form class="form-group" method="post" action="@Url.Action("Login1", "Account")">
-            @Html.TextBoxFor(model => model.Mail, new { @class = "form-control",type="email", @id = "firma_mail", @placeholder = "Mail Adresi" ,@name ="mail1"})
+            @Html.TextBoxFor(model => model.Mail, new { @class = "form-control",@type="email", @id = "firma_mail", @placeholder = "Mail Adresi" ,@name ="mail1"})
             <br />
 
             @Html.TextBoxFor(model => model.Sifre, new { @class = "form-control", @type = "password", @id = "firma_sifre", @placeholder = "Şifre" ,@name ="sifre1"})

@@ -190,11 +190,16 @@
     <Compile Include="Controllers\IlanAdminController.cs" />
     <Compile Include="Controllers\IlanController.cs" />
     <Compile Include="Controllers\KayitController.cs" />
+    <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlinanIs.cs" />
     <Compile Include="Models\Bildirim.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -204,12 +209,14 @@
     <Compile Include="Models\FirmaTeklif.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GuncelT.cs" />
     <Compile Include="Models\Ilan.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KabulEdilen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KabulI.cs" />
     <Compile Include="Models\Kategori.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -235,6 +242,7 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Teklif.cs" />
     <Compile Include="Models\Uye.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -301,6 +309,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\indir.jpg" />
     <Content Include="Images\logo.png" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -389,6 +398,16 @@
     <Content Include="Views\IlanAdmin\Create.cshtml" />
     <Content Include="Views\IlanAdmin\Edit.cshtml" />
     <Content Include="Views\IlanAdmin\Delete.cshtml" />
+    <Content Include="Views\Ilan\IlanAyrintiA.cshtml" />
+    <Content Include="Views\Ilan\IlanAyrintiK.cshtml" />
+    <Content Include="Views\Profil\Index.cshtml" />
+    <Content Include="Views\Profil\Uye.cshtml" />
+    <Content Include="Views\Profil\Firma.cshtml" />
+    <Content Include="Views\Profil\GuncelIlan.cshtml" />
+    <Content Include="Views\Profil\EskiIlan.cshtml" />
+    <Content Include="Views\Profil\GuncelTeklif.cshtml" />
+    <Content Include="Views\Profil\AlinanIs.cshtml" />
+    <Content Include="Views\Profil\KabulIlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

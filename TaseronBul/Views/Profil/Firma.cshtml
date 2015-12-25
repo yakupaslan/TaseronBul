@@ -1,0 +1,72 @@
+﻿@model TaseronBul.Models.Firma
+@{
+    ViewBag.Title = "Firma";
+}
+<br />
+<div class="col-md-4">
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href='@Url.Action("Kontrol", "Profil")'>Bilgilerim</a></li>
+        <li><a href='@Url.Action("GuncelTeklif", "Profil")'>Güncel Teklifler</a></li>
+        <li><a href='@Url.Action("AlinanIs", "Profil")'>Alınan İşler</a></li>
+        <li><a href="#">İlan Ara</a></li>
+    </ul>
+</div>
+<div class="col-md-8">
+    <div>
+        <label style="color: red">Firma Adı      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.FirmaAdi)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Yetkili Adı      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.YetkiliAd)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Yetkili Soyad      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.YetkiliSoyad)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Telefon      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.Telefon)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">E-Posta      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.Mail)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Fax     :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.Fax)
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Şehir      :</label>
+        <div style="margin-left: 5%">
+            @Html.Label("", String.Format("{0}", (string)@ViewBag.sehir))
+        </div>
+    </div>
+    <br />
+    <div>
+        <label style="color: red">Adres      :</label>
+        <div style="margin-left: 5%">
+            @Html.DisplayFor(model => model.Adres)
+        </div>
+    </div>
+    <br />
+    <p><a class="btn btn-primary btn-xs" href="#" role="button" style="float: right">Güncelle </a></p>
+</div>
