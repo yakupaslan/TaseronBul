@@ -7,101 +7,112 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
+        <br />
+        <br />
         <legend>Ilan</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IlanNo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IlanNo)
-            @Html.ValidationMessageFor(model => model.IlanNo)
-        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <div class="editor-label">
+                    @Html.HiddenFor(model => model.IlanNo)
+                </div>
+                <br />  
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.UyeId, "Uye")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("UyeId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.UyeId)
+                </div>
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.KategoriId, "Kategori")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("KategoriId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.KategoriId)
+                </div>
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IlanTuru)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.IlanTuru)
+                    @Html.ValidationMessageFor(model => model.IlanTuru)
+                </div>
+                <br />
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UyeId, "Uye")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("UyeId", String.Empty)
-            @Html.ValidationMessageFor(model => model.UyeId)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IlanYayinlamaTarihi)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.IlanYayinlamaTarihi)
+                    @Html.ValidationMessageFor(model => model.IlanYayinlamaTarihi)
+                </div>
+                <br />
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.KategoriId, "Kategori")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("KategoriId", String.Empty)
-            @Html.ValidationMessageFor(model => model.KategoriId)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IlanKapanisTarihi)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.IlanKapanisTarihi)
+                    @Html.ValidationMessageFor(model => model.IlanKapanisTarihi)
+                </div>
+               
+            </div>
+            <div class="col-md-3"> 
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SonIsGunu)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.SonIsGunu)
+                    @Html.ValidationMessageFor(model => model.SonIsGunu)
+                </div>
+                <br />
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IlanTuru)
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MaxFiyat)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.MaxFiyat)
+                    @Html.ValidationMessageFor(model => model.MaxFiyat)
+                </div>
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Durum)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Durum)
+                    @Html.ValidationMessageFor(model => model.Durum)
+                </div>
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Aciklama)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Aciklama)
+                    @Html.ValidationMessageFor(model => model.Aciklama)
+                </div>
+                <br />
+                <p>
+                    <input class="btn btn-success" type="submit" value="Save" />
+                </p>
+                <br />
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IlanTuru)
-            @Html.ValidationMessageFor(model => model.IlanTuru)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IlanYayinlamaTarihi)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IlanYayinlamaTarihi)
-            @Html.ValidationMessageFor(model => model.IlanYayinlamaTarihi)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IlanKapanisTarihi)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IlanKapanisTarihi)
-            @Html.ValidationMessageFor(model => model.IlanKapanisTarihi)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SonIsGunu)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SonIsGunu)
-            @Html.ValidationMessageFor(model => model.SonIsGunu)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MaxFiyat)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.MaxFiyat)
-            @Html.ValidationMessageFor(model => model.MaxFiyat)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Durum)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Durum)
-            @Html.ValidationMessageFor(model => model.Durum)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Aciklama)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Aciklama)
-            @Html.ValidationMessageFor(model => model.Aciklama)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
     </fieldset>
 }
-
+<div class="col-md-1"></div>
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Geri Dön ", "Index")
 </div>
 
 @section Scripts {

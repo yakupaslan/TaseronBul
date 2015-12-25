@@ -1,0 +1,88 @@
+﻿@model List<TaseronBul.Models.Ilan>
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+
+<div class="container">
+    <div class="col-md-12">
+
+        <div class="col-md-2" style="border: groove;">
+
+            @using(Html.BeginForm()){
+                <br />
+                <b>Kategori</b> 
+                <br />
+                @Html.DropDownList("KategoriId")
+                <hr />
+
+
+                <b>Fiyat Aralığı</b>
+                <br />
+                <br />
+                @Html.RadioButton("Fiyat", "1") <b>0 - 1000 TL</b><br />
+                @Html.RadioButton("Fiyat", "2") <b>1000 TL - 2500TL</b>
+                <br />
+                @Html.RadioButton("Fiyat", "3") <b>2500TL - 10000TL</b>
+                <br />
+                @Html.RadioButton("Fiyat", "4") <b>10000 TL Üzeri  </b>
+                <hr />
+                <b>İlan Türü</b>
+                <br />
+
+               @Html.RadioButton("IhaleTuru","true") <b>Açık </b> <br />   
+                @Html.RadioButton("IhaleTuru","false") <b>Kapalı </b>
+                <hr />
+                <b>Şehir</b>
+                <br />  
+                 @Html.DropDownList("sehir")
+                <hr />
+                <input type="submit" class="btn btn-success" value="Filtrele"  /> <br /> <br />
+             }
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-9">  <br /> <div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Son İlanlar</div>
+  
+
+  <table class="table">
+    <tr> 
+        <td><b>Açıklama</b></td> 
+        <td><b>Yayınlama Tarihi</b></td>
+        <td><b>Son Tarih</b></td>
+        <td><b>Max Fiyat</b></td>
+        <td><b>Teklif</b> </td>
+    </tr>     
+
+       @for (int i = 0; i < Model.Count; i++)
+       { 
+       <tr>
+         <td>
+           
+           @Html.DisplayFor(modelItem => Model[i].Aciklama)
+         </td>
+         <td>
+        
+           @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi)
+         </td>
+         <td>
+           @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi)
+         </td>
+           <td>
+           @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
+         </td>
+           
+           <td><p><a class="btn btn-danger btn xs" >Teklif Ver</a></p>
+       </tr>
+       }
+
+      
+  </table>
+</div></div>
+    </div>
+
+</div>

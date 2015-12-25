@@ -10,88 +10,102 @@
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
     <legend>Firma</legend>
+ <br />  <br />  
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
 
+   <div class="editor-label">
+            @Html.LabelFor(model => model.FirmaAdi)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.FirmaAdi)
+           
+        </div>
+    <br />  
+        <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.FirmaAdi)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FirmaAdi)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.YetkiliAd)
+         @Html.LabelFor(model => model.YetkiliAd)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.YetkiliAd)
     </div>
-
+        <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.YetkiliSoyad)
+         @Html.LabelFor(model => model.YetkiliSoyad)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.YetkiliSoyad)
     </div>
-
+        <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Mail)
+         @Html.LabelFor(model => model.Mail)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Mail)
     </div>
-
+        <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sifre)
+         @Html.LabelFor(model => model.Sifre)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Sifre)
     </div>
-
+        <br /> 
+           
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Telefon)
+         @Html.LabelFor(model => model.Telefon)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Telefon)
     </div>
-
+            <br /> 
+         </div>
+        <div class="col-md-3">
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sehir1.Sehir1)
+         @Html.LabelFor(model => model.Sehir1.Sehir1)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Sehir1.Sehir1)
     </div>
-
+            <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Adres)
+         @Html.LabelFor(model => model.Adres)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Adres)
     </div>
-
+            <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Fax)
+         @Html.LabelFor(model => model.Fax)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Fax)
     </div>
-
+            <br /> 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Durum)
+         @Html.LabelFor(model => model.Durum)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Durum)
-    </div>
+    </div><br /> 
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Puan)
+         @Html.LabelFor(model => model.Puan)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Puan)
+        </div> </br> 
+        </div>
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
+    
+    <div class="col-md-1"> </div>
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+          @Html.ActionLink("Geri Dön", "Index") &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+        <input class="btn btn-success" type="submit" value="SİL" /> 
+       
     </p>
 }
