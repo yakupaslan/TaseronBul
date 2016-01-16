@@ -276,6 +276,7 @@ namespace TaseronBul.Controllers
 
 
         }
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.KategoriId = new SelectList(db.Kategoris, "KategoriId", "KategoriAdi");
@@ -290,6 +291,7 @@ namespace TaseronBul.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Ilan ilan, int KategoriId,int Tip)
         {
             ViewBag.KategoriId = new SelectList(db.Kategoris, "KategoriId", "KategoriAdi");

@@ -2,7 +2,7 @@
     <script>
             
         document.getElementById('giris').style.display = 'none';
-
+        $("#link").show();
     </script>
     
     <text>
@@ -18,7 +18,7 @@
         <li  >@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
     <script>
-
+        document.getElementById('link').style.display = 'none';
         $("#giris").show();
     </script>
 }

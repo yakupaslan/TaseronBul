@@ -27,8 +27,7 @@
 
 
             <br />
-            @Html.TextBoxFor(model => model.firma.Sehir, new { @class = "form-control", @placeholder = "Sehir "})
-             @Html.DropDownList("Sehir", (IEnumerable<SelectListItem>)ViewBag.SehirId, new { @class = "form-control" })
+             @Html.DropDownList("Plaka", (IEnumerable<SelectListItem>)ViewBag.SehirId, new { @class = "form-control" })
 
             <br />
             @Html.TextBoxFor(model => model.firma.Adres, new { @class = "form-control", @placeholder = "Adres "})
@@ -60,7 +59,7 @@
             <br />
              @Html.TextBoxFor(model => model.uye.Telefon, new { @class = "form-control", @placeholder = "Telefon "})
             <br />
-             @Html.TextBoxFor(model => model.uye.Sehir, new { @class = "form-control", @placeholder = "Sehir "})
+             @Html.DropDownList("Plaka", (IEnumerable<SelectListItem>)ViewBag.SehirId, new { @class = "form-control" })
 
 
             <br />

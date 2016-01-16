@@ -3,83 +3,82 @@
     ViewBag.Title = "Taseron Bul";
 }
 
-    <div class="row">
-        <div class="col-md-12">
-            <br />
-            <br />
-            <div class="col-md-3" style="border-style: groove; height: 235px; margin-left: 100px;">
+<div class="row">
+    <div class="col-md-12">
+        <br />
+        <br />
+        <div class="col-md-3" style="border-style: groove; height: 235px; margin-left: 20%;">
 
-                <div class="jumbotron">
-                    <h2>İlan Ver</h2>
-                    <p>İşleriniz için ilan açıp, teklif alabiliriniz.</p>
-                    <p><a class="btn btn-warning btn xs" href="#" role="button">İlan Ver</a></p>
-                </div>
+            <div class="jumbotron">
+                <h2>İlan Ver</h2>
+                <p>İşleriniz için ilan açıp, teklif alabiliriniz.</p>
+                <p><a class="btn btn-warning btn xs" href='@Url.Action("Create", "Ilan")' role="button">İlan Ver</a></p>
             </div>
+        </div>
+        <div class="col-md-3" style="border-style: groove; height: 235px; margin-left: 50px;">
 
-            <div class="col-md-3" style="border-style: groove; height: 235px; margin-left: 50px;">
-
-                <div class="jumbotron">
-                    <h2>Teklif </h2>
-                    <p>İlanlara teklif yapıp, yeni işler alabilirsiniz.</p>
-                    <p><a class="btn btn-primary btn-xs" href="#" role="button">Teklif Ver </a></p>
-                </div>
+            <div class="jumbotron">
+                <h2>Teklif </h2>
+                <p>İlanlara teklif yapıp, yeni işler alabilirsiniz.</p>
+                <p><a class="btn btn-primary btn-xs" href='@Url.Action("Index", "Ilan")' role="button">Teklif Ver </a></p>
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <div class="col-md-10">
-        <div class="panel panel-primary">
-            <!-- Default panel contents -->
-            <div class="panel-heading">Son İlanlar</div>
-            <table class="table">
-                <tr>
-                    <td><b>Açıklama</b></td>
-                    <td><b>Yayınlama Tarihi</b></td>
-                    <td><b>Son Tarih</b></td>
-                    <td><b>Max Fiyat</b></td>
-                    <td><b>Tür</b></td>
-                    <td><b>İlan Ayrıntısı</b> </td>
-                </tr>
-                @for (int i = 0; i < Model.Count; i++)
+</div>
+<br />
+<br />
+<div class="col-md-10" style="margin-left: 5%">
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Son İlanlar</div>
+        <table class="table">
+            <tr>
+                <td><b>Açıklama</b></td>
+                <td><b>Yayınlama Tarihi</b></td>
+                <td><b>Son Tarih</b></td>
+                <td><b>Max Fiyat</b></td>
+                <td><b>Tür</b></td>
+                <td><b>İlan Ayrıntısı</b> </td>
+            </tr>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                if (Model[i].Durum == false)
                 {
-                    if (Model[i].Durum == false)
-                    {
-                        continue; 
-                    }
-                    string tur;
-                    if (Model[i].IlanTuru==false)
-                    {
-                        tur = "Açık İhale";
-                    }
-                    else
-                    {
-                        tur = "Kapalı İhale";
-                    }
-                    <tr>
-                        <td>
-                            
-                            @Html.DisplayFor(modelItem => Model[i].Aciklama)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
-                        </td>
-                         <td>
-                            @Html.DisplayFor(modelItem => tur)
-                        </td>
-                        <td>
-                            <p>
-                                <a class="btn btn-danger btn xs" ; href='@Url.Action("IlanKontT", "Ilan", new { id = Model[i].IlanNo })'>Teklif Ver</a>
-                            </p>
-                    </tr>
+                    continue;
                 }
+                string tur;
+                if (Model[i].IlanTuru == false)
+                {
+                    tur = "Açık İhale";
+                }
+                else
+                {
+                    tur = "Kapalı İhale";
+                }
+                <tr>
+                    <td>
 
-            </table>
-        </div>
+                        @Html.DisplayFor(modelItem => Model[i].Aciklama)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model[i].IlanYayinlamaTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model[i].IlanKapanisTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model[i].MaxFiyat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => tur)
+                    </td>
+                    <td>
+                        <p>
+                            <a class="btn btn-danger btn xs" ; href='@Url.Action("IlanKontT", "Ilan", new { id = Model[i].IlanNo })'>Teklif Ver</a>
+                        </p>
+                </tr>
+            }
+
+        </table>
     </div>
+</div>

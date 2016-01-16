@@ -19,16 +19,18 @@ namespace TaseronBul.Controllers
         private TaseronBulEntities1 db = new TaseronBulEntities1();
         public ActionResult Index()
         {
-            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir1");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(Firma firma,int GirilenDeger,int sonuc)
+        public ActionResult Create(Firma firma,byte Plaka)
         {
-            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
-            if (ModelState.IsValid && GirilenDeger==sonuc)
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir1");
+            if (ModelState.IsValid)
             {
+                firma.Tip = 1;
+                firma.Sehir = Plaka;
                 db.Firmas.Add(firma);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -38,11 +40,13 @@ namespace TaseronBul.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create2(Uye uye)
+        public ActionResult Create2(Uye uye, byte Plaka)
         {
-            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir1");
             if (ModelState.IsValid)
             {
+                uye.Tip = 2;
+                uye.Sehir =Plaka;
                 db.Uyes.Add(uye);
                 db.SaveChanges();
                 return RedirectToAction("Index");

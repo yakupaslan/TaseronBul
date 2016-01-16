@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="cb45a139e3f24b53a3cb5e316e1bbbfa" Name="Diagram1" ZoomLevel="55">
         <EntityTypeShape EntityType="TaseronBulModel.Bildirim" Width="1.5" PointX="9.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TaseronBulModel.Firma" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaseronBulModel.Firma" Width="1.5" PointX="3" PointY="1.5" IsExpanded="false" />
         <EntityTypeShape EntityType="TaseronBulModel.FirmaTeklif" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.Ilan" Width="1.5" PointX="5.375" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TaseronBulModel.KabulEdilen" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />

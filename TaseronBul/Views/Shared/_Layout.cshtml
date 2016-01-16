@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container"> 
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div style="float: left; margin-left: 30px; width: 200px; height: 70px; background-color: beige;">
@@ -19,27 +19,30 @@
             </div>
             <div id="giris">
                 <div style="float: right; margin-right: 50px; width: 212px; height: 60px; border-style: none;">
-                    <button  onclick="location.href=' @Url.Action("Index","Kayit")'" type="button"  class="btn" style="background-color: wheat; margin: 10px; margin-top: 30px;">Kayıt Ol</button>
+                    <button  onclick="location.href=' @Url.Action("Index", "Kayit")'" type="button"  class="btn" style="background-color: wheat; margin: 10px; margin-top: 30px;">Kayıt Ol</button>
 
 
-                    <button onclick="location.href=' @Url.Action("Login","Account")'" id="btn-giris" type="button" class="btn" style="background-color: #c18282; margin: 10px; margin-top: 30px;">Giriş Yap</button>
-                    <div class="gecici" style="visibility:hidden;">
+                    <button onclick="location.href=' @Url.Action("Login", "Account")'" id="btn-giris" type="button" class="btn" style="background-color: #c18282; margin: 10px; margin-top: 30px;">Giriş Yap</button>
+                    <div class="gecici" style="visibility: hidden;">
                         <ul>
                             <li><a href="#home">Bireysel</a></li>
                             <li><a href="#about">Kurumsal</a></li>
                         </ul>
                     </div>
-                   
+
                 </div>
             </div>
-             <section style="float: right; margin-right: 20px;" id="login">
-                            @Html.Partial("_LoginPartial")
-                     </section>
+            <div id="link">
+                <section style="float: right; margin-right: 20px;" id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+
         </div>
         <header>
             <br />
             <br />
-            <div class="content-wrapper" style="margin-left:1%">
+            <div class="content-wrapper" style="margin-left: 1%">
                 <nav class="nav navbar-inverse">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
@@ -48,14 +51,14 @@
 
                         <li>@Html.ActionLink("İletişim", "Index", "Home")</li>
 
-                        <li>@Html.ActionLink("Üye Ol", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Üye Ol", "Index", "Kayit")</li>
 
-                        <li>@Html.ActionLink("İlan Ara", "Index", "Home")</li>
+                        <li>@Html.ActionLink("İlan Ara", "Index", "ListeIlan")</li>
 
                         <li>@Html.ActionLink("Pazar Türü", "Index", "Home")</li>
 
 
-                        
+
                     </ul>
                 </nav>
 
