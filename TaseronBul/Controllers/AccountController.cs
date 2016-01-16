@@ -25,6 +25,11 @@ namespace TaseronBul.Controllers
             return View();
         }
         [AllowAnonymous]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [AllowAnonymous]
         public ActionResult Login1()
         {
             return View();

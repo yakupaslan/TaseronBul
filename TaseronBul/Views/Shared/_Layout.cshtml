@@ -22,19 +22,19 @@
                     <button  onclick="location.href=' @Url.Action("Index","Kayit")'" type="button"  class="btn" style="background-color: wheat; margin: 10px; margin-top: 30px;">Kayıt Ol</button>
 
 
-                    <button onclick="location.href=' @Url.Action("Login1","Account")'" id="btn-giris" type="button" class="btn" style="background-color: #c18282; margin: 10px; margin-top: 30px;">Giriş Yap</button>
+                    <button onclick="location.href=' @Url.Action("Login","Account")'" id="btn-giris" type="button" class="btn" style="background-color: #c18282; margin: 10px; margin-top: 30px;">Giriş Yap</button>
                     <div class="gecici" style="visibility:hidden;">
                         <ul>
                             <li><a href="#home">Bireysel</a></li>
                             <li><a href="#about">Kurumsal</a></li>
                         </ul>
                     </div>
-
-                    <script>
-                        
-                    </script>
+                   
                 </div>
             </div>
+             <section style="float: right; margin-right: 20px;" id="login">
+                            @Html.Partial("_LoginPartial")
+                     </section>
         </div>
         <header>
             <br />
@@ -55,9 +55,7 @@
                         <li>@Html.ActionLink("Pazar Türü", "Index", "Home")</li>
 
 
-                        <section style="float: right; margin-right: 20px;" id="login">
-                            @Html.Partial("_LoginPartial")
-                        </section>
+                        
                     </ul>
                 </nav>
 

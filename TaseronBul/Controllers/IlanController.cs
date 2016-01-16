@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using System.Data;
 using Newtonsoft.Json.Linq;
+using System.Web.Helpers;
+using System.Net.Mail;
+using System.Net;
 namespace TaseronBul.Controllers
 {
     public class IlanController : Controller
@@ -75,6 +78,31 @@ namespace TaseronBul.Controllers
                         db.SaveChanges();
 
 
+                        MailMessage mail = new MailMessage();
+
+                        mail.From = new MailAddress("aslanyakup20@gmail.com");
+                        var mailaaa = (from mail1 in db.Firmas where mail1.FirmaAdi == tip.FirmaAdi select mail1).FirstOrDefault();
+                        mail.To.Add(mailaaa.Mail);
+
+                        mail.Subject = "Teklif var";
+
+                        
+                        mail.Body = " Fiyat "+fiyat.ToString()+"  Teklif veren   "+mailaaa.FirmaAdi;
+
+                        SmtpClient sc = new SmtpClient();
+
+                        sc.Port = 587;
+                        sc.Host = "smtp.gmail.com";
+
+                        sc.EnableSsl = true;
+
+                        sc.Credentials = new NetworkCredential("aslanyakup20@gmail.com", "5a52237320");
+
+                        sc.Send(mail);
+                        
+                        
+
+
                     }
                     else
                     {
@@ -97,7 +125,7 @@ namespace TaseronBul.Controllers
             return View(liste);
         }
         [HttpGet]
-        public ActionResult IlanAyrintiA(int id)
+        public ActionResult IlanAyrintiA(int id, int? page)
         {
             Ilan ilan = db.Ilans.Find(id);
             if (ilan == null)
@@ -118,7 +146,7 @@ namespace TaseronBul.Controllers
                 ViewBag.Aciklama = ilan.Aciklama;
 
                 var liste = (from teklif in db.FirmaTeklifs join firma in db.Firmas on teklif.FirmaId equals firma.FirmaId where teklif.IlanNo == id orderby teklif.Fiyat ascending select new Teklif { FirmaAdi = firma.FirmaAdi, Fiyat = (float)teklif.Fiyat, Tarih = (DateTime)teklif.Tarih, IlanNo = (int)teklif.IlanNo }).ToList<Teklif>();
-
+              
                 return View(liste);
             }
             else
