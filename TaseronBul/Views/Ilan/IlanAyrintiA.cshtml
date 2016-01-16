@@ -2,10 +2,11 @@
 @{
     ViewBag.Title = "IlanAyrinti";
     WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
+    
 }
+@using GridMvc.Html
 <h2>IlanAyrinti</h2>
 <br />
-<div class="container">
     <div class="col">
         <div class="col-md-6">
             <div style="float: left; margin-left: 30px; width: auto; height: auto; background-color: beige;">
@@ -15,29 +16,14 @@
                 <div class="panel panel-primary">
                     <!-- Default panel contents -->
                     <div class="panel-heading">Teklifler</div>
-                    <table class="table">
-                        <tr>
-                            <td><b>Firma</b></td>
-                            <td><b>Fiyat</b></td>
-                            <td><b>Tarih</b></td>
-                        </tr>
-                        @for (int i = 0; i < Model.Count; i++)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => Model[i].FirmaAdi)
-                                </td>
-                                <td>
 
-                                    @Html.DisplayFor(modelItem => Model[i].Fiyat)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => Model[i].Tarih)
-                                </td>
-                            </tr>
-                        }
-                        @grid.GetHtml()
-                    </table>
+                    @Html.Grid(Model).Columns(columns =>
+                    {
+                        columns.Add(model => model.FirmaAdi).Titled("Firma");
+                        columns.Add(model => model.Fiyat).Titled("Fiyat").Filterable(true);
+                        columns.Add(model => model.Tarih).Titled("Tarih");
+                    }).WithPaging(10).Sortable(true)
+
                 </div>
             </div>
 
@@ -101,10 +87,3 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-</div>

@@ -19,12 +19,14 @@ namespace TaseronBul.Controllers
         private TaseronBulEntities1 db = new TaseronBulEntities1();
         public ActionResult Index()
         {
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(Firma firma,int GirilenDeger,int sonuc)
         {
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
             if (ModelState.IsValid && GirilenDeger==sonuc)
             {
                 db.Firmas.Add(firma);
@@ -38,6 +40,7 @@ namespace TaseronBul.Controllers
         [HttpPost]
         public ActionResult Create2(Uye uye)
         {
+            ViewBag.SehirId = new SelectList(db.Sehirs, "Plaka", "Sehir");
             if (ModelState.IsValid)
             {
                 db.Uyes.Add(uye);

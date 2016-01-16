@@ -9,9 +9,9 @@
         <form class="form-group" method="post" action="@Url.Action("Create", "Ilan")">
             <br />
 
-            @Html.DropDownList("KategoriId", (IEnumerable<SelectListItem>)ViewBag.KategoriId, "Kategori Seçiniz", new { @class = "form-control" })
+            @Html.DropDownList("KategoriId", (IEnumerable<SelectListItem>)ViewBag.KategoriId, new { @class = "form-control" })
             <br />
-            @Html.DropDownList("Tip", (IEnumerable<SelectListItem>)ViewBag.Tip, "İhale Tipi ", new { @class = "form-control" })
+            @Html.DropDownList("Tip", (IEnumerable<SelectListItem>)ViewBag.Tip, new { @class = "form-control" })
 
             <br />
             @Html.TextBoxFor(m => m.IlanYayinlamaTarihi, new { @class = "form-control", placeholder = "İlan Yayınlama Tarihi" })<br />

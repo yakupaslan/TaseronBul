@@ -14,8 +14,10 @@ namespace TaseronBul.Controllers
     
         public ActionResult Index()
         {
-          
-            return View(db.Ilans.ToList());
+            
+            
+            var ilan = (from z in db.Ilans where z.IlanKapanisTarihi > DateTime.Now select z).ToList();
+            return View(ilan);
         }
 
         public ActionResult About()
